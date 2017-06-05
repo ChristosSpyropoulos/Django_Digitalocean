@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Image Recognition</title>
+</head>
+<body>
+    <h1>This is the "Image Recognition App" using IBM's Watson API</h1>
+    <p>Please select an image from the internet.
+        <br>Right-Click on the image and press: Copy the image address.
+        <br>Paste the link to the search bar and hit Search!
+        <br>You can use any image.
+    </p>
+    <form id="search" method="get" action="">
+        <input type="text" name="q"  placeholder="Search" value="{{ request.GET.q }}"/>
+        <input type="submit" class="btn btn-primary" value="Find information"/>
+    </form>
+    <br>
+    <h3>Information</h3>
+    {% for image in images %}
+        <p>We are {{ image.score }} /1 sure that the image has to do with {{ image.class }} </p>
+    {% endfor %}
+    <br>
+    <h3>Raw Data</h3>
+    {% for image in images %}
+        <p>{{ image }}</p>
+    {% endfor %}
+</body>
+</html>
