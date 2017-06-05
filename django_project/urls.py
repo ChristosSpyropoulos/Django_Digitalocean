@@ -20,5 +20,5 @@ from helloworld import views as hello
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', hello.hello),
-    url(r'^', include('home.urls'))
+    url(r'^home/', include('home.urls'))
 ]
