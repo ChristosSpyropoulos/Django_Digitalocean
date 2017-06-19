@@ -16,10 +16,16 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from helloworld import views as helloworld_v
+from homepage import views as homepage_views
+from about import views as about_views
+from contact import views as contact_views
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', helloworld_v.hello),
     url(r'^home/', include('home.urls')),
     url(r'^watson/', include('watson.urls')),
+    url(r'^homepage/$', homepage_views.home),
+    url(r'^about/$', about_views.about),
+    url(r'^contact/$', contact_views.contact),
 ]

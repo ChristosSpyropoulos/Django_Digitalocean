@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %}
+{% block title %}
+home
+{% endblock %}
+{% block title2 %}
+home
+{% endblock %}
+{% block content %}
+	<div id="fh5co-main">
+		<div class="container">
+
+			<div class="row">
+
+        <div id="fh5co-board" data-columns>
+
+          {% for tattoo in tattoos %}
+        	<div class="item">
+        		<div class="animate-box">
+	        		<a href="static/images/{{ tattoo.tattoo_photo }}" class="image-popup fh5co-board-img" title="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?">
+                <img src="{% static "images/" %}{{ tattoo.tattoo_photo }}" alt="Free HTML5 Bootstrap template"></a>
+        		</div>
+        		<div class="fh5co-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, eos?</div>
+        	</div>
+          {% endfor %}
+
+
+
+        </div>
+      </div>
+     </div>
+	</div>
+{% endblock %}
